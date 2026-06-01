@@ -1,0 +1,61 @@
+{
+  "vector_model": "all-MiniLM-L6-v2",
+  "corpus_1": {
+    "name": "Prometheus Operator runbooks",
+    "source": "https://github.com/prometheus-operator/runbooks",
+    "license": "Apache 2.0",
+    "num_docs": 30,
+    "num_queries": 35,
+    "bm25": {
+      "name": "BM25",
+      "num_queries": 35,
+      "MRR": 0.8652,
+      "P@1": 0.8,
+      "P@3": 0.3143,
+      "P@5": 0.2,
+      "latency_p50_ms": 0.03,
+      "latency_p95_ms": 0.041,
+      "index_build_ms": 0.646
+    },
+    "vector": {
+      "name": "Vector (all-MiniLM-L6-v2)",
+      "num_queries": 35,
+      "MRR": 0.9,
+      "P@1": 0.8286,
+      "P@3": 0.3429,
+      "P@5": 0.2057,
+      "latency_p50_ms": 5.161,
+      "latency_p95_ms": 34.268,
+      "index_build_ms": 153.053
+    }
+  },
+  "corpus_2": {
+    "name": "Kubernetes troubleshooting documentation",
+    "source": "https://kubernetes.io/docs/tasks/debug/",
+    "license": "Apache 2.0",
+    "num_docs": 30,
+    "num_queries": 36,
+    "bm25": {
+      "name": "BM25",
+      "num_queries": 36,
+      "MRR": 0.9211,
+      "P@1": 0.8889,
+      "P@3": 0.3333,
+      "P@5": 0.2111,
+      "latency_p50_ms": 0.03,
+      "latency_p95_ms": 0.042,
+      "index_build_ms": 0.533
+    },
+    "vector": {
+      "name": "Vector (all-MiniLM-L6-v2)",
+      "num_queries": 36,
+      "MRR": 0.912,
+      "P@1": 0.8611,
+      "P@3": 0.3333,
+      "P@5": 0.2167,
+      "latency_p50_ms": 4.55,
+      "latency_p95_ms": 8.553,
+      "index_build_ms": 53.504
+    }
+  }
+}
