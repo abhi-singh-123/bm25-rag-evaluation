@@ -1,0 +1,71 @@
+# BM25 vs Vector Search: Retrieval Evaluation
+
+Replication package for the IEEE Software article **"The Retrieval Layer You Already Have: Why most RAG pipelines reach for a vector database before they need one"** by Kumar Abhishek (Akamai Technologies, Inc.).
+
+## What This Is
+
+A reproducible evaluation comparing BM25 and sentence-transformers (all-MiniLM-L6-v2) retrieval across two independent publicly licensed corpora of Kubernetes/SRE technical documentation.
+
+**Key finding:** On domain-specific technical documentation where authors and users share vocabulary, BM25 matches or outperforms vector search on retrieval quality while being 150-2300x faster to index and requiring zero external dependencies.
+
+## Corpora
+
+| Corpus | Source | License | Docs | Queries |
+|--------|--------|---------|------|---------|
+| Prometheus Operator Runbooks | [runbooks.prometheus-operator.dev/runbooks/](https://runbooks.prometheus-operator.dev/runbooks/) |  Apache 2.0 | 30 | 35 |
+| Kubernetes Troubleshooting Docs | [kubernetes.io/docs/tasks/debug](https://kubernetes.io/docs/tasks/debug/) |  CC BY 4.0 | 30 | 36 |
+
+## Results
+
+### Corpus 1: Prometheus Operator Runbooks
+
+| Metric | BM25 | sentence-transformers |
+|--------|------|-----------------------|
+| P@1 | 0.800 | 0.829 |
+| MRR | 0.865 | 0.900 |
+| Query latency p50 | 0.030 ms | 5.161 ms |
+| Index build | 0.646 ms | 153.053 ms |
+
+### Corpus 2: Kubernetes Troubleshooting Docs
+
+| Metric | BM25 | sentence-transformers |
+|--------|------|-----------------------|
+| P@1 | 0.889 | 0.861 |
+| MRR | 0.921 | 0.912 |
+| Query latency p50 | 0.030 ms | 4.550 ms |
+| Index build | 0.533 ms | 53.504 ms |
+
+## Reproduction
+
+```bash
+pip install -r requirements.txt
+python eval_unified.py
+```
+
+Outputs `eval_unified_results.json` and `eval_unified_results.md` with all metrics.
+
+**Requirements:** Python 3.9+, internet connection for first model download (~90 MB).
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `eval_unified.py` | Unified evaluation script — both corpora, both retrievers |
+| `requirements.txt` | Python dependencies |
+| `eval_unified_results.json` | Raw results from author's machine |
+| `eval_unified_results.md` | Formatted results table |
+
+## Citation
+
+> Abhishek, K. 2025. The Retrieval Layer You Already Have: Why most RAG pipelines reach for a vector database before they need one. *IEEE Software* (under review).
+
+## Author
+
+Kumar Abhishek — Engineering Manager, Quality Engineering and AI Tooling, Akamai Technologies, Inc.
+ORCID: [0009-0005-7443-0235](https://orcid.org/0009-0005-7443-0235)
+LinkedIn: [linkedin.com/in/kr0abhishek](https://linkedin.com/in/kr0abhishek)
+
+## License
+
+Evaluation code: MIT License.
+Corpus 1 content is paraphrased from Apache 2.0 licensed sources. Corpus 2 content is paraphrased from CC BY 4.0 licensed sources — see corpus sources above.
