@@ -2,60 +2,60 @@
   "vector_model": "all-MiniLM-L6-v2",
   "corpus_1": {
     "name": "Prometheus Operator runbooks",
-    "source": "https://github.com/prometheus-operator/runbooks",
+    "source": "https://runbooks.prometheus-operator.dev/runbooks/",
     "license": "Apache 2.0",
     "num_docs": 30,
-    "num_queries": 35,
+    "num_queries": 38,
     "bm25": {
       "name": "BM25",
-      "num_queries": 35,
-      "MRR": 0.8652,
-      "P@1": 0.8,
-      "P@3": 0.3143,
-      "P@5": 0.2,
-      "latency_p50_ms": 0.03,
+      "num_queries": 38,
+      "MRR": 0.8123,
+      "P@1": 0.7105,
+      "P@3": 0.3246,
+      "P@5": 0.2105,
+      "latency_p50_ms": 0.034,
       "latency_p95_ms": 0.041,
-      "index_build_ms": 0.646
+      "index_build_ms": 1.222
     },
     "vector": {
       "name": "Vector (all-MiniLM-L6-v2)",
-      "num_queries": 35,
-      "MRR": 0.9,
-      "P@1": 0.8286,
-      "P@3": 0.3429,
-      "P@5": 0.2057,
-      "latency_p50_ms": 5.161,
-      "latency_p95_ms": 34.268,
-      "index_build_ms": 153.053
+      "num_queries": 38,
+      "MRR": 0.9211,
+      "P@1": 0.8684,
+      "P@3": 0.3684,
+      "P@5": 0.2263,
+      "latency_p50_ms": 4.95,
+      "latency_p95_ms": 26.669,
+      "index_build_ms": 222.605
     }
   },
   "corpus_2": {
     "name": "Kubernetes troubleshooting documentation",
     "source": "https://kubernetes.io/docs/tasks/debug/",
-    "license": "Apache 2.0",
+    "license": "CC BY 4.0",
     "num_docs": 30,
-    "num_queries": 36,
+    "num_queries": 35,
     "bm25": {
       "name": "BM25",
-      "num_queries": 36,
-      "MRR": 0.9211,
-      "P@1": 0.8889,
+      "num_queries": 35,
+      "MRR": 0.9181,
+      "P@1": 0.8857,
       "P@3": 0.3333,
-      "P@5": 0.2111,
-      "latency_p50_ms": 0.03,
-      "latency_p95_ms": 0.042,
-      "index_build_ms": 0.533
+      "P@5": 0.2114,
+      "latency_p50_ms": 0.031,
+      "latency_p95_ms": 0.041,
+      "index_build_ms": 2.593
     },
     "vector": {
       "name": "Vector (all-MiniLM-L6-v2)",
-      "num_queries": 36,
-      "MRR": 0.912,
-      "P@1": 0.8611,
-      "P@3": 0.3333,
-      "P@5": 0.2167,
-      "latency_p50_ms": 4.55,
-      "latency_p95_ms": 8.553,
-      "index_build_ms": 53.504
+      "num_queries": 35,
+      "MRR": 0.894,
+      "P@1": 0.8286,
+      "P@3": 0.3429,
+      "P@5": 0.2057,
+      "latency_p50_ms": 4.812,
+      "latency_p95_ms": 5.367,
+      "index_build_ms": 71.684
     }
   }
 }
