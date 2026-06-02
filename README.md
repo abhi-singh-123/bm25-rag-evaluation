@@ -68,11 +68,11 @@ Outputs `eval_unified_results.json` and `eval_unified_results.md` with all metri
 
 ## Citation
 
-> Abhishek, K. 2025. The Retrieval Layer You Already Have: Why most RAG pipelines reach for a vector database before they need one. *IEEE Software* (under review).
+> Abhishek, K. 2026. The Retrieval Layer You Already Have: Why most RAG pipelines reach for a vector database before they need one. *IEEE Software* (under review).
 
 ## Author
 
-Kumar Abhishek — Engineering Manager, Quality Engineering and AI Tooling, Akamai Technologies, Inc.
+Kumar Abhishek — Engineering Manager, Quality Engineering, Akamai Technologies, Inc.
 ORCID: [0009-0005-7443-0235](https://orcid.org/0009-0005-7443-0235)
 LinkedIn: [linkedin.com/in/kr0abhishek](https://linkedin.com/in/kr0abhishek)
 
